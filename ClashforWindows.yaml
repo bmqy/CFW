@@ -90,7 +90,7 @@ dns:
   default-nameserver:
     - 114.114.114.114
     - 8.8.8.8
-  # enhanced-mode: fake-ip
+  enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16 # Fake IP 地址池 CIDR
   # use-hosts: true # 查找 hosts 并返回 IP 记录
 
@@ -98,9 +98,50 @@ dns:
 
   # 此列表中的主机名将不会使用 Fake IP 解析
   # 即, 对这些域名的请求将始终使用其真实 IP 地址进行响应
-  # fake-ip-filter:
-  #   - '*.lan'
-  #   - localhost.ptlogin2.qq.com
+  fake-ip-filter:
+    - '*.lan'
+    - 'cable.auth.com'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - 'network-test.debian.org'
+    - 'detectportal.firefox.com'
+    - 'resolver1.opendns.com'
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - 'xbox.*.microsoft.com'
+    - '+.xboxlive.com'
+    - 'stun.*'
+    - 'global.turn.twilio.com'
+    - 'global.stun.twilio.com'
+    - 'localhost.*.qq.com'
+    - '+.logon.battlenet.com.cn'
+    - '+.logon.battle.net'
+    - '+.blzstatic.cn'
+    - '+.cmpassport.com'
+    - 'id6.me'
+    - 'open.e.189.cn'
+    - 'mdn.open.wo.cn'
+    - 'opencloud.wostore.cn'
+    - 'auth.wosms.cn'
+    - '+.jegotrip.com.cn'
+    - '+.icitymobile.mobi'
+    - '+.pingan.com.cn'
+    - '+.cmbchina.com'
+    - '+.cmbchina.com.cn'
+    - '+?miwifi.com'
+    - 'pool.ntp.org'
+    - '+.pool.ntp.org'
+    - 'ntp.*.com'
+    - 'time.*.com'
+    - 'ntp?.*.com'
+    - 'time?.*.com'
+    - 'time.*.gov'
+    - 'time.*.edu.cn'
+    - '+.ntp.org.cn'
+    - 'time.*.apple.com'
+    - 'PDC._msDCS.*.*'
+    - 'DC._msDCS.*.*'
+    - 'GC._msDCS.*.*'
 
   # 支持 UDP、TCP、DoT、DoH. 您可以指定要连接的端口.
   # 所有 DNS 查询都直接发送到名称服务器, 无需代理
@@ -165,6 +206,8 @@ proxy-providers:
     path: ./proxy_providers/tmp.yaml
     
 proxies: null
+    # Shadowsocks 支持 aead_aes_128_gcm/aead_aes_192_gcm/aead_aes_256_gcm/aead_chacha20_poly1305/aes-128-ctr/aes-192-ctr/aes-256-ctr/aes-128-cfb/aes-192-cfb/aes-256-cfb/chacha20-ietf/xchacha20/chacha20/rc4-md5/xchacha20-ietf-poly1305 加密格式
+    # Vmess 支持 auto/aes-128-gcm/chacha20-poly1305/none 加密方式
 
 proxy-groups:
 #分流分组
@@ -183,11 +226,11 @@ proxy-groups:
   
 #节点分组
   - {name: auto, <<: *a4}
-  - {name: 香港节点, <<: *a4, filter: "港|HK|(?i)Hong"           }             # a4更改为a2，即为手动选择
-  - {name: 日本节点, <<:  *a4, filter: "日|东京|JP|(?i)Japan"     }            # a4更改为a2，即为手动选择     
-  - {name: 台湾节点, <<: *a4, filter: "台|湾|TW|(?i)Taiwan"      }             # a4更改为a2，即为手动选择
-  - {name: 美国节点, <<: *a4, filter: "美|US|(?i)States|American"}             # a4更改为a2，即为手动选择
-  - {name: 狮城节点, <<: *a4, filter: "新|坡|SG|(?i)Singapore"    }            # a4更改为a2，即为手动选择
+  - {name: 香港节点, <<: *a4, filter: "港|HK|(?i)Hong"} # a4更改为a2，即为手动选择
+  - {name: 日本节点, <<:  *a4, filter: "日|东京|JP|(?i)Japan"} # a4更改为a2，即为手动选择     
+  - {name: 台湾节点, <<: *a4, filter: "台|湾|TW|(?i)Taiwan"} # a4更改为a2，即为手动选择
+  - {name: 美国节点, <<: *a4, filter: "美|US|(?i)States|American"} # a4更改为a2，即为手动选择
+  - {name: 狮城节点, <<: *a4, filter: "新|坡|SG|(?i)Singapore"} # a4更改为a2，即为手动选择
 
 tunnels:
   # 单行配置
