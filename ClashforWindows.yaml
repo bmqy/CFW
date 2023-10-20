@@ -244,19 +244,19 @@ proxy-groups:
 
 # https://github.com/Loyalsoldier/clash-rules
 rule-providers:
-  reject: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt, path: ./ruleset/reject.yaml}
-  icloud: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt, path: ./ruleset/icloud.yaml}
-  apple: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt, path: ./ruleset/apple.yaml}
-  google: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt, path: ./ruleset/google.yaml}
-  proxy: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt, path: ./ruleset/proxy.yaml}
-  direct: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt, path: ./ruleset/direct.yaml}
-  private: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt, path: ./ruleset/private.yaml}
-  gfw: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt, path: ./ruleset/gfw.yaml}
-  tld-not-cn: {<<: *a5, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt, path: ./ruleset/tld-not-cn.yaml}
-  telegramcidr: {<<: *a7, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt, path: ./ruleset/telegramcidr.yaml}
-  cncidr: {<<: *a7, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt, path: ./ruleset/cncidr.yaml}
-  lancidr: {<<: *a7, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt, path: ./ruleset/lancidr.yaml}
-  applications: {<<: *a6, url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt, path: ./ruleset/applications.yaml}
+  reject: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt, path: ./ruleset/reject.yaml}
+  icloud: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt, path: ./ruleset/icloud.yaml}
+  apple: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt, path: ./ruleset/apple.yaml}
+  google: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt, path: ./ruleset/google.yaml}
+  proxy: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt, path: ./ruleset/proxy.yaml}
+  direct: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt, path: ./ruleset/direct.yaml}
+  private: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt, path: ./ruleset/private.yaml}
+  gfw: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt, path: ./ruleset/gfw.yaml}
+  tld-not-cn: {<<: *a5, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt, path: ./ruleset/tld-not-cn.yaml}
+  telegramcidr: {<<: *a7, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt, path: ./ruleset/telegramcidr.yaml}
+  cncidr: {<<: *a7, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt, path: ./ruleset/cncidr.yaml}
+  lancidr: {<<: *a7, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt, path: ./ruleset/lancidr.yaml}
+  applications: {<<: *a6, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt, path: ./ruleset/applications.yaml}
 rules:
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
