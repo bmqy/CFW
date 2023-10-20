@@ -232,15 +232,15 @@ proxy-groups:
   - {name: 美国节点, <<: *a4, filter: "美|US|(?i)States|American"} # a4更改为a2，即为手动选择
   - {name: 狮城节点, <<: *a4, filter: "新|坡|SG|(?i)Singapore"} # a4更改为a2，即为手动选择
 
-tunnels:
+# tunnels:
   # 单行配置
-  - tcp/udp,127.0.0.1:6553,114.114.114.114:53,proxy
-  - tcp,127.0.0.1:6666,rds.mysql.com:3306,vpn
+  # - tcp/udp,127.0.0.1:6553,114.114.114.114:53,proxy
+  # - tcp,127.0.0.1:6666,rds.mysql.com:3306,vpn
   # 全 yaml 配置
-  - network: [tcp, udp]
-    address: 127.0.0.1:7777
-    target: target.com
-    proxy: proxy
+  # - network: [tcp, udp]
+    # address: 127.0.0.1:7777
+    # target: target.com
+    # proxy: proxy
 
 # https://github.com/Loyalsoldier/clash-rules
 rule-providers:
